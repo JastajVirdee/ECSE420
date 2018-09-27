@@ -1,0 +1,7 @@
+# Compiled class file
+*.class
+
+# vscode File
+*.vscode
+launch.json
+settings.json
