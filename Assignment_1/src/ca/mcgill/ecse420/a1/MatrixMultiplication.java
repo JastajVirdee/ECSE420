@@ -13,6 +13,9 @@ public class MatrixMultiplication {
 		// Generate two random matrices, same size
 		double[][] a = generateRandomMatrix(MATRIX_SIZE, MATRIX_SIZE);
 		double[][] b = generateRandomMatrix(MATRIX_SIZE, MATRIX_SIZE);
+		/* 2 small arrays to test
+		double[][] y = {{1, 2}, {3, 4}};
+		double[][] z = {{1, 2}, {3, 4}}; */
 		sequentialMultiplyMatrix(a, b);
 		parallelMultiplyMatrix(a, b);	
 	}
@@ -25,8 +28,15 @@ public class MatrixMultiplication {
 	 * @return the result of the multiplication
 	 * */
 	public static double[][] sequentialMultiplyMatrix(double[][] a, double[][] b) {
-		return b;
-		
+		double[][] c = new double[MATRIX_SIZE][MATRIX_SIZE];
+		for (int i = 0; i < MATRIX_SIZE; i++) {
+			for (int j = 0; j < MATRIX_SIZE; j++) {
+				for (int k = 0; k < MATRIX_SIZE; k++) {
+					c[i][j] = c[i][j] + a[i][k] * b[k][j];
+				}				
+			}
+		}
+		return c;
 	}
 	
 	/**
