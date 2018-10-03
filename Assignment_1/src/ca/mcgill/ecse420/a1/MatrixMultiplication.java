@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 public class MatrixMultiplication {
 	
-	private static final int NUMBER_THREADS = 1;
-	private static final int MATRIX_SIZE = 1000;
+	private static final int NUMBER_THREADS = 3;
+	private static final int MATRIX_SIZE = 3200;
 
     public static void main(String[] args) {
 		// Generate two random matrices, same size
