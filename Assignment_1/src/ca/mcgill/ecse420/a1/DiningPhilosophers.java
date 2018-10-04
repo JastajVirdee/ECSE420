@@ -9,9 +9,8 @@ public class DiningPhilosophers
 {
   // Lock to avoid deadlock and starvation
   // Avoids starvation as the reetrant lock is fair
+  // Solution for 3.2 and 3.3
   private static ReentrantLock lock = new ReentrantLock(true);
-
-  private static int totalEats = 0;
 
   public static void main(String[] args)
   {
@@ -59,6 +58,7 @@ public class DiningPhilosophers
           System.out.println("Philosopher " + Thread.currentThread().getId() + " is hungry. Attempting to acquire chopsticks.");
 
           // Add the lock to avoid Deadlock and starvation!
+          // Solution for 2 and 3
           lock.lock();
 
           synchronized(this.LeftChopstick)
@@ -86,6 +86,7 @@ public class DiningPhilosophers
         finally
         {
           // Release the lock so that no one else will be blocked if thread dies
+          // Solution for 3.2 and 3.3
           lock.unlock();
         }
       }
