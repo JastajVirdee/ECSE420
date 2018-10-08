@@ -8,3 +8,9 @@ settings.json
 
 # Editorconfig files
 *.editorconfig
+/bin/
+
+
+# Eclipse files
+*.classpath
+*.project
