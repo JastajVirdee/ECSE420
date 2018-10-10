@@ -5,13 +5,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class DiningPhilosophers {
-  // Lock to avoid deadlock and starvation
-  // Avoids starvation as the reetrant lock is fair
-  // Solution for 3.2 and 3.3
-  private static ReentrantLock lock = new ReentrantLock(true);
-
-  public static void main(String[] args) {
+public class DiningPhilosophersDeadlocked {
+    public static void main(String[] args) {
     int numberOfPhilosophers = 5;
     Philosopher[] philosophers = new Philosopher[numberOfPhilosophers];
     Object[] chopsticks = new Object[numberOfPhilosophers];
@@ -49,10 +44,6 @@ public class DiningPhilosophers {
           System.out.println(
               "Philosopher " + Thread.currentThread().getId() + " is hungry. Attempting to acquire chopsticks.");
 
-          // Add the lock to avoid Deadlock and starvation!
-          // Solution for 2 and 3
-          lock.lock();
-
           synchronized (this.LeftChopstick) {
             System.out.println("Philosopher " + Thread.currentThread().getId() + " picked up left chopstick.");
 
@@ -61,21 +52,17 @@ public class DiningPhilosophers {
                   .println("Philosopher " + Thread.currentThread().getId() + " picked up Right chopstick. Eating now.");
 
               // Simulate eating
-              Thread.sleep(1);
+              Thread.sleep(((int) (Math.random() * 1000)));
             }
           }
           System.out.println("Philosopher " + Thread.currentThread().getId()
               + " finished using the chopsticks. Going back to thinking.");
 
           // Simulate thinking.
-          // Thread.sleep(500);
+          Thread.sleep(((int) (Math.random() * 1000)));
         } catch (InterruptedException e) {
           System.out.println(e.getMessage());
           return;
-        } finally {
-          // Release the lock so that no one else will be blocked if thread dies
-          // Solution for 3.2 and 3.3
-          lock.unlock();
         }
       }
     }
