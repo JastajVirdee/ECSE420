@@ -61,14 +61,14 @@ public class DiningPhilosophers {
                   .println("Philosopher " + Thread.currentThread().getId() + " picked up Right chopstick. Eating now.");
 
               // Simulate eating
-              Thread.sleep(1);
+              Thread.sleep(((int) (Math.random() * 1000)));
             }
           }
           System.out.println("Philosopher " + Thread.currentThread().getId()
               + " finished using the chopsticks. Going back to thinking.");
 
           // Simulate thinking.
-          // Thread.sleep(500);
+          Thread.sleep(((int) (Math.random() * 1000)));
         } catch (InterruptedException e) {
           System.out.println(e.getMessage());
           return;
