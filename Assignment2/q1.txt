@@ -1,0 +1,9 @@
+1.2:
+Yes filter lock does allow other threads to arbitrarily overtake other 
+threads. This can be seen by using r-bounded waiting. r-bounded waiting
+implies that a thread (i.e. thread A) cannot overtake another thread
+(i.e. thread b) more than r times. For example, first-come-first-served,
+has a bounded waiting of r = 0 as it is impossible for a thread to 
+overtake another. However, for the filter algorithm, we saw in class
+that there is no value of r which means that a thread can be arbitrarily 
+overtaken.
