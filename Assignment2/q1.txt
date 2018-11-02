@@ -7,3 +7,22 @@ has a bounded waiting of r = 0 as it is impossible for a thread to
 overtake another. However, for the filter algorithm, we saw in class
 that there is no value of r which means that a thread can be arbitrarily 
 overtaken.
+
+1.4:
+The bakery algorithm does not allow for a thread to overtake another
+thread an arbitrary number of times. The bakery algorithm is a 
+first-come-first-served algorithm and therefore has an r = 0. 
+With r-bounded waiting, an r = 0 means that no thread can overtake
+another which is by definition in a first-come-first-served approach.
+The bakery algorithms works by a client (thread), taking a number and 
+then waiting untill all lower numbers have been served. This is why a 
+thread cannot overtake another thread an arbitrary number of times.
+
+1.5
+A test to verify that mutual exclusion is satisfied is to create an 
+arbitrary amount of threads (for testing, a number >= 5 will suffice)
+and have them all try to access the same shared resource. However, this 
+resource will be protected using the bakery algorithm. Once the lock
+is obtained, it might be nice to have a print statement declaring that
+the lock has been obtained/released and a sleep statement to make sure that 
+the other threads are not accessing it at the same times

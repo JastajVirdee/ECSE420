@@ -28,9 +28,16 @@ class Filter implements Lock{
             level[threadId] = L;
             victim[L] = threadId;
 
-            for (int k = 0; k < level.length; k++) {
-                while ((k != threadId) && (level[k] >= L 
-                && victim[L] == threadId)){};
+            boolean spinwait = true;
+            while (spinwait) {
+                spinwait = false;
+                
+                for (int k = 1; k < level.length; k++) {
+                    if (k != threadId && level[k] >= L && victim[L] == threadId) {
+                        spinwait = true;
+                        break;
+                    }
+                }
             }
         }
     }
