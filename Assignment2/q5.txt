@@ -1,0 +1,14 @@
+5.1
+No, the reader method will never divide by zero. Volatile variables provide
+a visibility guarantee. This means that if thread A writes to a volatile 
+variable, then thread B reads the same volatile variable, then every
+variable written by thread A will be visible to thread B meaning that
+they will be reread with the updated value.
+
+5.2
+Dividing by zero is not possible when both are volatile since volatile 
+variables are always read from main memory. In this case, boolean V is 
+written after varable x so x will be updated before v. Since the value of v
+needs to be read prior to x, and x is updated prior to v in the writer 
+method, this means that x will never be zero when the reader method is 
+invoked.
