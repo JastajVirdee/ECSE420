@@ -12,3 +12,7 @@ written after varable x so x will be updated before v. Since the value of v
 needs to be read prior to x, and x is updated prior to v in the writer 
 method, this means that x will never be zero when the reader method is 
 invoked.
+If x and v are volatile, then it is possible to divide by zero. This can 
+happen if both x and v are cached with their initial value of zero and 
+false respectively. If v gets its value updated in cache but x does not 
+then when the reader method is invoked, it will divide by zero.
