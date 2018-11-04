@@ -1,0 +1,26 @@
+2
+Regular registers can cause a value to flicker between the old and new 
+value when a read and write are overlapping.
+For a 2 thread mutual exclusion example, LockOne will satisfy mutual 
+exclusion. For example,let's say we have two threads (A and B). 
+For the 'flickering' to occur,
+then flag[A] must been read and written in an overlapping fashion, or the
+same must occur for flag[B]. This means that flag[A] must be written to 
+true by thread A and simultaneously, Thread[B] must read the value. If the
+old value is read, then B will enter its critical section. However, when 
+the write is completed, then B will eventually enter its critical section.
+Also, since flag[B] is already set to true, thread A will not be able to
+enter its critical section and mutual exclusion will not be violated. If
+the new value of flag[A] is read, then B will not enter its critical 
+section and for the same reason as stated above, A will not be able to 
+enter its critical section either, resulting in deadlock. However, this does
+not violate mutual exclusion.
+
+LockTwo will also satisfy mutual exclusion for similar reasons to LockOne. 
+If A marks itself as the victim and B reads victim, then B will not enter
+its critical section as it believes that it is the victim(reading old 
+value). Once A finishes writing, in a subsequent read, B will be able to 
+enter its critical section. A will not be able to enter its critical
+section as it has set itself as the victim. Therefor mutual exclusion is
+satisfied. If B reads the new value, then the algorithm works as expected 
+so mutual exclusion is satisfied.
