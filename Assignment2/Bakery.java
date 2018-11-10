@@ -25,14 +25,6 @@ class Bakery implements Lock{
         flag[me] = true;
         label[me] = findMax(label) + 1;
 
-        // for (int k = 0; k < n; k++) {
-        //     while ((k != me) && flag[k] 
-        //     && ((label[k] < label[me]) || ((label[k] == label[me]) && k < me)))
-        //     {
-        //     }
-              
-        // }
-
         boolean spinwait = true;
         while (spinwait) {
             spinwait = false;

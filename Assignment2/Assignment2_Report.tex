@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\usepackage{multicol}
+\usepackage{sectsty}
+\usepackage{listings}
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=10mm,
+ top=10mm,
+}
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\title{Assignment 2}
+\author{Spiros Mavroidakos 26068931 Jastaj Virdee 260689027}
+
+\begin{document}
+\maketitle
+
+\section {Q.1}
+\subsection{}
+Refer to appendix section A.1
+
+\subsection {}
+Yes filter lock does allow other threads to arbitrarily overtake other threads. 
+This can be seen by using r-bounded waiting. r-bounded waiting implies that a thread 
+(i.e. thread A) cannot overtake another thread (i.e. thread b) more than r times. 
+For example, first-come-first-served, has a bounded waiting of r = 0 as it is impossible 
+for a thread to overtake another. However, for the filter algorithm, we saw in class that 
+there is no value of r which means that a thread can be arbitrarily overtaken.
+
+\subsection {}
+Refer to appendix section A.2
+
+\subsection {}
+The bakery algorithm does not allow for a thread to overtake another thread an arbitrary number
+of times. The bakery algorithm is a first-come-first-served algorithm and therefore has an r = 
+0. With r-bounded waiting, an r = 0 means that no thread can overtake another which is by 
+definition in a first-come-first-served approach. The bakery algorithms works by a client 
+(thread), taking a number and then waiting until all lower numbers have been served. 
+This is why a thread cannot overtake another thread an arbitrary number of times.
+
+\subsection {}
+A test to verify that mutual exclusion is satisfied is to create an arbitrary amount of 
+threads (for testing, a number $>$= 5 will suffice) and have them all try to access the same 
+shared resource. However, this resource will be protected using the bakery algorithm. Once 
+the lock is obtained, it might be nice to have a print statement declaring that the lock has 
+been obtained/released and a sleep statement to make sure that the other threads are not 
+accessing it at the same times.
+
+\subsection{}
+Refer to appendix section A.3
+
+
+\appendix
+\section{Question 1 Code}
+\subsection{Filter algorithm}
+\lstinputlisting[language=java]{Filter.java}
+\subsection{Bakery Algorithm}
+\lstinputlisting[language=java]{Bakery.java}
+\subsection{Test Code for Bakery Algorithm}
+\lstinputlisting[language=java]{BakeryTest.java}
+
+\end{document}
