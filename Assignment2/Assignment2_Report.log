@@ -1,0 +1,251 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2018.1.31)  9 NOV 2018 20:32
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./Assignment2_Report.tex
+(./Assignment2_Report.tex
+LaTeX2e <2017-04-15>
+Babel <3.17> and hyphenation patterns for 84 language(s) loaded.
+(e:/texlive/2017/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(e:/texlive/2017/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(e:/texlive/2017/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
+\c@tracingmulticols=\count87
+\mult@box=\box26
+\multicol@leftmargin=\dimen103
+\c@unbalance=\count88
+\c@collectmore=\count89
+\doublecol@number=\count90
+\multicoltolerance=\count91
+\multicolpretolerance=\count92
+\full@width=\dimen104
+\page@free=\dimen105
+\premulticols=\dimen106
+\postmulticols=\dimen107
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\maxbalancingoverflow=\dimen108
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count93
+\c@finalcolumnbadness=\count94
+\last@try=\dimen109
+\multicolovershoot=\dimen110
+\multicolundershoot=\dimen111
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\mc@col@check@num=\count95
+)
+(e:/texlive/2017/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+)
+(e:/texlive/2017/texmf-dist/tex/latex/listings/listings.sty
+(e:/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\lst@mode=\count96
+\lst@gtempboxa=\box52
+\lst@token=\toks15
+\lst@length=\count97
+\lst@currlwidth=\dimen112
+\lst@column=\count98
+\lst@pos=\count99
+\lst@lostspace=\dimen113
+\lst@width=\dimen114
+\lst@newlines=\count100
+\lst@lineno=\count101
+\lst@maxwidth=\dimen115
+
+(e:/texlive/2017/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count102
+\lst@skipnumbers=\count103
+\lst@framebox=\box53
+)
+(e:/texlive/2017/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(e:/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(e:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(e:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(e:/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count104
+\Gm@cntv=\count105
+\c@Gm@tempcnt=\count106
+\Gm@bindingoffset=\dimen116
+\Gm@wd@mp=\dimen117
+\Gm@odd@mp=\dimen118
+\Gm@even@mp=\dimen119
+\Gm@layoutwidth=\dimen120
+\Gm@layoutheight=\dimen121
+\Gm@layouthoffset=\dimen122
+\Gm@layoutvoffset=\dimen123
+\Gm@dimlist=\toks16
+)
+(e:/texlive/2017/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(e:/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+(e:/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+(./Assignment2_Report.aux)
+\openout1 = `Assignment2_Report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+\c@lstlisting=\count107
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(28.45274pt, 483.69684pt, 85.35829pt)
+* v-part:(T,H,B)=(28.45274pt, 731.23582pt, 85.35828pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69684pt
+* \textheight=731.23582pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-80.81725pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(e:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count108
+\scratchdimen=\dimen124
+\scratchbox=\box54
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen125
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks18
+) (e:/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (./Filter.java
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 2.
+
+(e:/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 17.
+
+(e:/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 17.
+ [1
+
+{e:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./Bakery.java
+ [2])
+(./BakeryTest.java [3]) [4] (./Assignment2_Report.aux) ) 
+Here is how much of TeX's memory you used:
+ 2851 strings out of 492980
+ 40172 string characters out of 6136222
+ 345231 words of memory out of 5000000
+ 6426 multiletter control sequences out of 15000+600000
+ 6363 words of font info for 23 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,6n,43p,214b,1575s stack positions out of 5000i,500n,10000p,200000b,80000s
+<e:/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><e:/texlive/2017/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi9.pfb><e:/texlive/2017/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb><e:/texlive/2017/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr9.pfb><e:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9
+.pfb>
+Output written on Assignment2_Report.pdf (4 pages, 65677 bytes).
+PDF statistics:
+ 37 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
