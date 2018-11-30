@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{color}
+\usepackage{courier}
+\usepackage{dirtytalk}
+\usepackage{hyperref}
+\usepackage{fixltx2e}
+\usepackage[margin=1in]{geometry}
+
+\definecolor{dblue}{rgb}{0.2,0.2,0.6}
+\definecolor{dyellow}{rgb}{0.6,0.6,0.2}
+
+\lstset{
+	basicstyle=\footnotesize\ttfamily,
+	breaklines=true,
+	showstringspaces=false,
+	frame=single,
+	showlines=true,
+	numbers=left,
+}
+
+\lstdefinelanguage{bash}{
+	morestring=[b]"",
+	morestring=[s]{>}{<},
+	stringstyle=\color{black},
+	identifierstyle=\color{blue},
+	keywordstyle=\color{green},
+}
+
+\hypersetup {
+	colorlinks = true,
+	linkcolor = dblue,
+	linktoc = all,
+	citecolor = dyellow,
+}
+
+\title{Assignment 3}
+\author{Spiros-Daniel Mavroidakos - 260689391\\Jastaj Virdee - 260689027}
+\date{\today}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\pagenumbering{roman}
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{Question 1}
+
+\subsection{}
+From the question, we know the following.
+\begin{itemize}
+	\item We are reading L words from cache
+	\item Cache Line is 4 words
+\end{itemize}
+L' is the number of words that can be stored in the cache given a maximum word seperation of stride s. A stride can be a maximum size of 
+$\left\lfloor\dfrac{L}{2}\right\rfloor$. We also know that the cache can have several cache lines. We will denote the amount of cache lines 
+by k. \\
+Knowing this, we can come up with the following equation for L'.
+
+\begin{equation}
+	\begin{split}
+		L' = \left\lceil\frac{4k}{\left\lfloor\dfrac{L}{2}\right\rfloor}\right\rceil
+	\end{split}
+\end{equation}
+
+Furthermore, t0 shows the cache access latency as it does take some time to read from the cache. GIven that L < L', the stride size will 
+either be 0 or a size that fits within the case. Therefore, all the time delay for access comes from reading the case.
+
+\subsection{}
+Given that L > L', the stride will be large enough that we cannot only read from the cache. The words will be too seperated to read only 
+from cache. However, at t1, we have peaked in the maximum read time. This implies that the stride is larger than the actual cache size. 
+That is why it is a constant line. t1 will therefore be showing the memory access latency since we are no longer reading from the cache. 
+t1 might also take into account the time to read the cache as we need to generate a cache miss to read from other storage.
+
+\subsection{}
+Part 1 is when L < L' so as stated in section 1.1, all of the data of the array will fit into the cache and will therefore be accessed at 
+the time that it takes to read the cache. This is why it is the lowest of the 2 curves. \\
+Part 2 is when L > L' however, the stride has not become so big that we cannot use the cache in a meaningful way. Throughout part 2, the 
+stride is continuously increasing which is why the curve is increasing as you must read from cache and then main memory. At the end of 
+part 2 (the peak value where it becomes constant) is where part 3 begins and when the stride has become so large that the stride takes 
+up all of the cache and you will always incur a cache miss and have to then go to main memory which is why it is a peak. Part 2 has a mix 
+between some values are in cache and some are not while part 3 is where everything is not in the cache. 
+
+\subsection{}
+
+\end{document}
