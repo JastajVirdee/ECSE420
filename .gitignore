@@ -14,3 +14,11 @@ settings.json
 # Eclipse files
 *.classpath
 *.project
+
+*.aux
+*.log
+*.fls
+*.out
+*.toc
+*.synctec.gz
+*.fdb_latexmk
