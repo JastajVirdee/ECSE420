@@ -125,19 +125,30 @@ hand-over-hand method, those operations cannot interfere with the contains metho
 \section{Question 3}
 
 \subsection{}
-The contents of the array-based queue will be very similar to the one shown in class (which used a linked-list). Notable differences 
+The contents of the (circular) array-based queue will be very similar to the one shown in class (which used a linked-list). Notable differences 
 would be that the head and tail will be represented by integers, representing the index of the array. Both will be initialized to zero. 
 The array will also need to be created using the `int capacity` variable to set the size.\\
 The equeue method will also be very similar in that both implementations will lock the `enqLock` before attempting to enqueue an object, 
 and will release it once it is finished. It will also wait while the queue is full and notify blocked dequeuers if the queue was empty. 
 The difference comes when one attempts to enqueue an item. Rather than creating a new node, the item will be placed in the array at index 
-`(tail+1)\%capacity` and `tail` will then be incremented.\\
+`(tail+1)\%capacity`,`tail` and `size` will then be incremented.\\
 Similarly, the dequeue method will lock the `deqLock` before attempting to dequeue an object, and release it once it is finished. It will 
 then wait while the queue is empty. To dequeue an object, the item at the `head\%capacity` index of the array will be saved, and later 
-returned, and `head` will be incremented. Finally the method will notify the blocked enqueuers if the queue was full.
+returned, `head` will be incremented and `size` will be decremented. Finally the method will notify the blocked enqueuers if the queue 
+was full.
 
 \subsection{}
-
+To perform a lock-free enqueue, one would have to perform a logical enqueue enqueue by performing a Compare and Set between the item at 
+the `tail` index and the new item. One would then have to perform a physical enqueue by performing a CAS between the `tail` index and the 
+index of the new item. However these two steps are not atomic, so the `tail` index may either point to the actual last item or the 
+penultimate item. For the original implementation using linked-lists, if one were to find a trailing tail one would fix it by checking if 
+the tail node has a non-null next field, and then performing a CAS on the tail and tail.next field. This is where a problem arises when 
+trying to use arrays because checking if the item at the index after `tail` is not null does not not guarantee we have a  trailing tail. 
+Because we are using a circular queue, it is possible that the `tail` index is in fact pointing to the correct index, but the next index 
+may be non-null.\\
+To solve this, one would have to switch to a linear, fixed size array. Enqueuing would consist of placing the item at the first index 
+which has a null field. Dequeuing would consist of saving and later returning the item in the first index, and shifting all the other 
+items to the previous position.
 
 \appendix
 \section{Question 2 Code}
