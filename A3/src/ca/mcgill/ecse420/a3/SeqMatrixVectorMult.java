@@ -1,4 +1,4 @@
-package ca.mcgill.ecse420.a1;
+package ca.mcgill.ecse420.a3;
 public class SeqMatrixVectorMult {
 
 	public static double[][] matrix;

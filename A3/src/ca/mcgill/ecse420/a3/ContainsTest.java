@@ -1,3 +1,5 @@
+package ca.mcgill.ecse420.a3;
+
 public class ContainsTest{
     public static FineGrainedContains test = new FineGrainedContains<Object>();
 

@@ -1,3 +1,5 @@
+package ca.mcgill.ecse420.a3;
+
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Node<T>{
