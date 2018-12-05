@@ -150,10 +150,12 @@ The array will also need to be created using the `int capacity` variable to set 
 The equeue method will also be very similar in that both implementations will lock the `enqLock` before attempting to enqueue an object, 
 and will release it once it is finished. It will also wait while the queue is full and notify blocked dequeuers if the queue was empty. 
 The difference comes when one attempts to enqueue an item. Rather than creating a new node, the item will be placed in the array at index 
-`(tail+1)\%capacity`,`tail` and `size` will then be incremented.\\
+`(tail+1)\%capacity`,`tail` and `size` will then be incremented. However in the case that the queue is empty, the item will be placed at 
+index `tail\%capacity` instead.\\
 Similarly, the dequeue method will lock the `deqLock` before attempting to dequeue an object, and release it once it is finished. It will 
 then wait while the queue is empty. To dequeue an object, the item at the `head\%capacity` index of the array will be saved, and later 
-returned, `head` will be incremented and `size` will be decremented. Finally the method will notify the blocked enqueuers if the queue 
+returned, `head` will be incremented and `size` will be decremented.  However `head` will not be incremented if the queue only had one 
+item (and is now empty). Finally the method will notify the blocked enqueuers if the queue 
 was full.
 
 \subsection{}
