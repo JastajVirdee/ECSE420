@@ -150,6 +150,31 @@ To solve this, one would have to switch to a linear, fixed size array. Enqueuing
 which has a null field. Dequeuing would consist of saving and later returning the item in the first index, and shifting all the other 
 items to the previous position.
 
+\section{Question 4}
+
+\subsection{}
+The algorithm for sequential matrix vector multiplication involves computing each entry of the result vector by performing the dot 
+product on the rows of the matrix with the vector. The code can be found in section B.1.
+
+\subsection{}
+The algorithm used of parallel matrix vector multiplication involved splitting up the problem into multiple subtasks. Specifically, each 
+subtask was responsible for calculating one entry of the result vector. To do this it, the dot product was performed on one row of the 
+matrix and the vector. The work and critical path will be discussed in part 4. The code can be found in Appendix B.2.
+
+\subsection{}
+To test the execution times of the sequential and parallel methods, a 2000 by 2000 randomly generated matrix was created as well as a 
+randomly generated 2000-length vector. The time was recorded and the sequential method was executed. Once finished, the time was 
+recorded again and the difference between the two times was calculated to determine the time of execution. The same was done for the 
+parallel method, where 3 threads were used. The execution time of the sequential method was 0.142s, the parallel time was 0.109s. The 
+speedup on P processors is the time taken by one processor divided the time taken by P processors. In this example it would be the time 
+of the sequential method divided by the time of the parallel method. Hence the speed up on 3 processors is 1.30. The code can be found 
+in section B.3.
+
+\subsection{}
+Each subtask performs n multiplications and n-1 additions. There are n subtasks so the work is n*(n+n-1) which is O(n^2). Since all 
+the critical paths can be executed in parallel, the critical path would be the cost of one subtask, so n+n-1 which is O(n). The 
+parallelism is the work divided by the critical path: O(n^2/n) = O(n).
+
 \appendix
 \section{Question 2 Code}
 \subsection{Node Implementation}
@@ -160,5 +185,13 @@ items to the previous position.
 \lstinputlisting[language=java]{ContainsTest.java}
 \subsection{Contains Test Output}
 \lstinputlisting[language=bash]{output.txt}
+
+\section{Question 4 Code}
+\subsection{Sequential Implementation}
+\lstinputlisting[language=java]{SeqMatrixVectorMult.java}
+\subsection{Parallel Implementation}
+\lstinputlisting[language=java]{ParMatrixVectorMult.java}
+\subsection{Test Program}
+\lstinputlisting[language=java]{MatrixVectorMultTest.java}
 
 \end{document}
