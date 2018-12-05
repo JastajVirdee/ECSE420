@@ -76,21 +76,32 @@ Furthermore, t0 shows the cache access latency as it does take some time to read
 either be 0 or a size that fits within the case. Therefore, all the time delay for access comes from reading the case.
 
 \subsection{}
-Given that L > L', the stride will be large enough that we cannot only read from the cache. The words will be too seperated to read only 
+Given that L $>$ L', the stride will be large enough that we cannot only read from the cache. The words will be too seperated to read only 
 from cache. However, at t1, we have peaked in the maximum read time. This implies that the stride is larger than the actual cache size. 
 That is why it is a constant line. t1 will therefore be showing the memory access latency since we are no longer reading from the cache. 
 t1 might also take into account the time to read the cache as we need to generate a cache miss to read from other storage.
 
 \subsection{}
-Part 1 is when L < L' so as stated in section 1.1, all of the data of the array will fit into the cache and will therefore be accessed at 
+Part 1 is when L $<$ L' so as stated in section 1.1, all of the data of the array will fit into the cache and will therefore be accessed at 
 the time that it takes to read the cache. This is why it is the lowest of the 2 curves. \\
-Part 2 is when L > L' however, the stride has not become so big that we cannot use the cache in a meaningful way. Throughout part 2, the 
+Part 2 is when L $>$ L' however, the stride has not become so big that we cannot use the cache in a meaningful way. Throughout part 2, the 
 stride is continuously increasing which is why the curve is increasing as you must read from cache and then main memory. At the end of 
 part 2 (the peak value where it becomes constant) is where part 3 begins and when the stride has become so large that the stride takes 
 up all of the cache and you will always incur a cache miss and have to then go to main memory which is why it is a peak. Part 2 has a mix 
 between some values are in cache and some are not while part 3 is where everything is not in the cache. 
 
 \subsection{}
+If we were to pad the array such that distinct elements are mapped to distinct cache lines then the value of L' will surely be affected.
+From 1.1, we know that we have k cache lines and that every cache line can contain 4 words. However, by padding we reduce the amount of 
+words that a cache line can hold. It can now only hold 1 word. Therefore, we would get the following revised equation:
+\begin{equation}
+	\begin{split}
+		L' = \left\lceil\frac{k}{\left\lfloor\dfrac{L}{2}\right\rfloor}\right\rceil
+	\end{split}
+\end{equation}
+Because of this, performance degredation will happen since the value of L' will be reduced. A smaller L' means that we will have more cache 
+misses as we can store less words in the cache and therefore will have to read from main memory more often which is noticeably more costly 
+than reading from a cache.
 
 \section{Question 2}
 
@@ -121,6 +132,14 @@ is being locked without an unlock occuring prior. The output clearly demonstrate
 previous node is unlocked and the current node's next node is locked. It can also be noticed that the released previous node is then 
 being locked by another waiting node. Since the add and remove methods that have been seen in class are implemented using the same 
 hand-over-hand method, those operations cannot interfere with the contains method as they are designed to be thread safe.
+\\\\
+The test setup is relatively simple, 3 nodes are set up each with a different value: Node a has a value of 1, node b has a value of 2
+and node c has a value of 3. The head node's next value is set up to be node a. Node a points to b, b points to c and finally c points 
+to the tail node which marks the end of the list. From the source code, the contains method will return false only if we reach the tail 
+node as all other nodes have been checked for equality. For simplicity, each node is going to be searching for the value of 3. From the 
+output, we can observe that each thread will find the value at a different time and not all at the same time. If the output would show 
+lock duplication before an unlock or at least 2 threads finding the value conccurently then we would know that the implementation is 
+flawed. However, this is not the case and therefore, the test passes. 
 
 \section{Question 3}
 

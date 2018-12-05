@@ -7,8 +7,10 @@ public class FineGrainedContains<T>
 {
     public Node head = new Node();
 
-    public boolean contains(T item)
-    {
+    public Node tail = new Node();
+
+    public boolean contains(T item){
+        // basic locking for hand-over-hand locking
         Node pred = head;
         pred.lock();
         Node curr = pred.next;
@@ -17,10 +19,9 @@ public class FineGrainedContains<T>
 
         try
         {
-
             while (curr.key <= key)
             {
-                // check if they are equal
+                // check if the item has been found
                 if (curr.item == item)
                 {
                     return true;
@@ -29,26 +30,25 @@ public class FineGrainedContains<T>
                 // Hand over hand locking
                 pred.unlock();
                 pred = curr;
-                if(curr.next != null)
+
+                // end if the tail id reached
+                if(curr.next != tail)
                 {
                     curr = curr.next;
                     curr.lock();
                 }
                 else
                 {
-                    curr = null;
+                    curr = curr.next;
+                    curr.lock();
                     break;
                 }
             }
-
         }
         finally
         {   
             pred.unlock();
-            if (curr != null)
-            {
-                curr.unlock();
-            }
+            curr.unlock();
         }
 
         // nothing was found

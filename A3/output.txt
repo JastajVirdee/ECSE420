@@ -1,51 +1,50 @@
-Done execution
+Thread with id = 13 Searching for value = 3.
 Thread with id = 15 Searching for value = 3.
 Thread with id = 14 Searching for value = 3.
-Thread with id = 12 Searching for value = 3.
-Thread with id = 13 Searching for value = 3.
 Thread with id = 16 Searching for value = 3.
+Thread with id = 12 Searching for value = 3.
 Node with key = 0 locked
 Node with key = 1 locked
 Node with key = 0 unlocked
-Node with key = 2 locked
-Node with key = 0 locked
-Node with key = 1 unlocked
-Node with key = 3 locked
-Node with key = 1 locked
-Node with key = 2 unlocked
-Node with key = 0 unlocked
-Node with key = 3 unlocked
-Node with key = 0 locked
 Node with key = 2 locked
 Node with key = 1 unlocked
 Node with key = 3 locked
 Node with key = 2 unlocked
 Node with key = 3 unlocked
-Node with key = 1 locked
-Thread with id = 15 found value
-Node with key = 0 unlocked
-Node with key = 2 locked
 Node with key = 0 locked
-Node with key = 1 unlocked
-Thread with id = 12 found value
 Node with key = 1 locked
-Node with key = 3 locked
-Node with key = 0 unlocked
-Node with key = 2 unlocked
-Node with key = 0 locked
-Node with key = 2 locked
-Node with key = 3 unlocked
-Node with key = 1 unlocked
 Thread with id = 16 found value
-Node with key = 1 locked
-Node with key = 3 locked
 Node with key = 0 unlocked
+Node with key = 2 locked
+Node with key = 0 locked
+Node with key = 1 unlocked
+Node with key = 3 locked
+Node with key = 1 locked
 Node with key = 2 unlocked
+Node with key = 0 unlocked
+Node with key = 3 unlocked
+Node with key = 0 locked
+Node with key = 2 locked
+Thread with id = 15 found value
+Node with key = 1 unlocked
+Node with key = 3 locked
+Node with key = 1 locked
+Node with key = 2 unlocked
+Node with key = 0 unlocked
+Node with key = 3 unlocked
+Node with key = 0 locked
+Node with key = 2 locked
+Thread with id = 14 found value
+Node with key = 1 unlocked
+Node with key = 3 locked
+Node with key = 1 locked
+Node with key = 2 unlocked
+Node with key = 0 unlocked
 Node with key = 3 unlocked
 Node with key = 2 locked
-Thread with id = 13 found value
+Thread with id = 12 found value
 Node with key = 1 unlocked
 Node with key = 3 locked
 Node with key = 2 unlocked
 Node with key = 3 unlocked
-Thread with id = 14 found value
+Thread with id = 13 found value
